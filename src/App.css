@@ -1,0 +1,324 @@
+.App {
+  background:black;
+  height:calc(100vh - 40px);
+  width:calc(100vw - 40px);
+  color:rgb(16, 135, 190);
+  position:relative;
+  overflow:hidden;
+  font-family: 'Dosis', sans-serif;
+  padding:20px;
+}
+
+h1 {
+  margin-top:0;
+}
+
+.orange {
+  color:rgb(255, 187, 0);
+}
+
+.orange-bg {
+  color:rgb(255, 187, 0);
+}
+
+.blue {
+  color: rgb(87, 172, 252);
+}
+
+.blue-bg {
+  background: rgb(87, 172, 252);
+}
+
+.green {
+  color: rgb(89, 163, 68);
+}
+
+.green-bg {
+  color: rgb(89, 163, 68);
+}
+
+/* =========================== */
+/* NAVIGATION CSS */
+/* =========================== */
+nav {
+  position:absolute;
+  left:0;
+  top: calc(50% - 76px);
+  display:flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+nav li a {
+  text-decoration:none;
+  color:white;
+  display:inline-block;
+  padding:10px 30px 10px 20px;
+  margin-bottom:10px;
+  font-weight:bold;
+  transition:all 0.5s ease;
+}
+
+nav #about-link a{padding-left:50px;background-color:rgb(255, 187, 0)}
+nav #skillset-link a{padding-left:90px;background-color:rgb(87, 172, 252)}
+nav #history-link a{padding-left:70px;background-color:rgb(89, 163, 68)}
+
+nav #about-link:hover a,
+nav #skillset-link:hover a,
+nav #history-link:hover a {
+  color:#999;
+  background:white;
+  padding-left:150px;
+}
+
+nav #about-link a.active,
+nav #skillset-link a.active,
+nav #history-link a.active {
+  padding-left:20px;
+  padding-right:120px;
+  color:black;
+  background:white;
+}
+
+nav #about-link a.active {
+  border-right:10px solid rgb(255, 187, 0);
+}
+
+nav #skillset-link a.active {
+  border-right:10px solid rgb(87, 172, 252);
+}
+
+nav #history-link a.active {
+  border-right:10px solid rgb(89, 163, 68);
+}
+
+/* =========================== */
+/* TREE CSS */
+/* =========================== */
+
+#tree-container {
+  width: 60vw;
+  height: 100vh;
+  display: flex;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.tree {
+  padding: 20px;
+  margin: 5px auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.triangle {
+    bottom:0;
+    position:absolute;
+    width: 0; 
+    height: 0; 
+    color:white;
+    transform: scale(0,0);
+    transform-origin: 50% 100%;
+}
+
+.trunk {
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent; 
+  border-bottom: 400px solid; 
+}
+
+.tier1 {
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent; 
+  border-bottom: 200px solid;  
+}
+
+.tier2 {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 117px solid;
+}
+
+.tier3 {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 60px solid;
+}
+
+.triangle.grown {
+  transform:scale(1,1);
+  transition:transform 0.5s ease;
+}
+
+.branch-holder {
+  position:absolute;
+}
+
+#branch1 {
+  -webkit-transform: rotate(78deg);
+  -ms-transform: rotate(78deg);
+  transform: rotate(78deg);
+  bottom: 267px;
+  left: 57px;
+}
+
+#branch2 {
+  -webkit-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  transform: rotate(-47deg);
+  bottom: 276px;
+  left: 49px;
+}
+
+#branch3 {
+  -webkit-transform: rotate(32deg);
+  -ms-transform: rotate(32deg);
+  transform: rotate(44deg);
+  bottom: 146px;
+  left: 65px;
+}
+
+#branch3-1 {
+  -webkit-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  transform: rotate(86deg);
+  bottom: 221px;
+  left: 151px;
+}
+
+#branch4 {
+  -webkit-transform: rotate(-78deg);
+  -ms-transform: rotate(-78deg);
+  transform: rotate(-78deg);
+  bottom: 189px;
+  left: 49px;
+}
+
+#branch4-1 {
+  -webkit-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  transform: rotate(224deg);
+  bottom: 201px;
+  left: 5px;
+}
+
+#branch4-2 {
+  -webkit-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  transform: rotate(-35deg);
+  bottom: 223px;
+  left: -71px;
+}
+
+#branch5 {
+  -webkit-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  transform: rotate(57deg);
+  bottom: 346px;
+  left: 60px;
+}
+
+/* =========================== */
+/* ICONS CSS */
+/* =========================== */
+
+.skill {
+  position:absolute;
+  transform: scale(0);
+  opacity:0;
+}
+
+.skill-content {
+  position:absolute;
+  margin-left:20px;
+  opacity:0;
+
+  transition:all 0.3s ease;
+}
+
+.skill-content ul {
+  display:flex;
+  flex-wrap:wrap;
+  margin:0;
+  padding:0;
+}
+
+.skill-content li {
+  width: calc(50% - 5px);
+  display:block;
+  flex-grow:1;
+  margin:0 5px 5px 0;
+}
+
+.skill-content h3 {
+  color:white;
+}
+
+#dev-skills {
+  bottom: 377px;
+  left: 10px;
+}
+
+#dev-skills .skill-content {
+  bottom: 0;
+  left: 110px;
+  width: 320px;
+}
+
+#design-skills {
+  bottom: 196px;
+  left: -224px;
+}
+
+#corporate-skills {
+  bottom: 235px;
+  left: 184px;
+}
+
+.loaded-skill{
+  animation: showpop 1s ease; 
+  opacity:1;
+  transform:scale(1);
+}
+
+.skill img {
+  transition:transform 0.3s ease;
+}
+
+.skill:hover img{
+  transform:rotate(10deg);
+  cursor:pointer;
+}
+
+.skill:hover .skill-content {
+  opacity:1;
+  margin-left:40px;
+}
+
+@keyframes showpop
+{
+  0% { 
+    opacity:0;
+    -webkit-transform: scale(0.75);
+  }        
+  70% { 
+    opacity:0;
+    -webkit-transform: scale(0.75);
+  }        
+  90% { 
+    opacity:1;
+    -webkit-transform: scale(1.3);
+  }
+  100% { 
+    opacity:0.8;
+    -webkit-transform: scale(1);
+  }
+}
